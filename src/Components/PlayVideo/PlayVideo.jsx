@@ -1,13 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./PlayVideo.css";
-import video1 from "../../assets/video1.mp4";
-import like from "../../assets/like.png";
-import dislike from "../../assets/dislike.png";
-import share from "../../assets/share.png";
-import save from "../../assets/save.png";
-import user_profile from "../../assets/user_profile.jpg";
-import jack from "../../assets/jack.png";
-import ede from "../../assets/ede.jpg";
 import { value_converter } from "../../data";
 import axios from "axios";
 import moment from "moment";
