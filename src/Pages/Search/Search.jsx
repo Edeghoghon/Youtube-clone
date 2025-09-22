@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import { API_KEY } from "../../data";
+
 import "./Search.css";
 
 const Search = () => {
   const { query } = useParams();
   const [videos, setVideos] = useState([]);
+  const API_KEY = import.meta.env.VITE_API_KEY;
 
   useEffect(() => {
     const fetchVideos = async () => {

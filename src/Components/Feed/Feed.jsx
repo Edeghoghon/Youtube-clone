@@ -9,12 +9,13 @@ import thumbnail6 from "../../assets/thumbnail6.png";
 import thumbnail7 from "../../assets/thumbnail7.png";
 import thumbnail8 from "../../assets/thumbnail8.png";
 import { Link } from "react-router-dom";
-import { API_KEY, value_converter } from "../../data";
+import { value_converter } from "../../data";
 import axios from "axios";
 import moment from "moment";
 
 const Feed = ({ category }) => {
   const [data, setData] = useState([]);
+  const API_KEY = import.meta.env.VITE_API_KEY;
   const FetchData = async () => {
     const videolist_url = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&chart=mostPopular&regionCode=US&videoCategoryId=${category}&maxResults=54&key=${API_KEY}
 `;

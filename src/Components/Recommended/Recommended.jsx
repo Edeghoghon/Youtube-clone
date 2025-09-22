@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import "./Recommended.css";
 import { useState } from "react";
-import { API_KEY } from "../../data";
 import axios from "axios";
 import { value_converter } from "../../data";
 import { Link } from "react-router-dom";
 
 const Recommended = ({ categoryId }) => {
   const [apiData, setapiData] = useState([]);
+  const API_KEY = import.meta.env.VITE_API_KEY;
 
   const fetchVideo = async () => {
     if (!categoryId) {

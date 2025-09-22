@@ -8,7 +8,7 @@ import save from "../../assets/save.png";
 import user_profile from "../../assets/user_profile.jpg";
 import jack from "../../assets/jack.png";
 import ede from "../../assets/ede.jpg";
-import { API_KEY, value_converter } from "../../data";
+import { value_converter } from "../../data";
 import axios from "axios";
 import moment from "moment";
 import { slice } from "lodash";
@@ -19,14 +19,24 @@ const PlayVideo = ({ onCategoryFetch }) => {
   const [apidata, setApidata] = useState(null);
   const [channelData, setChannelData] = useState(null);
   const [channelComment, setchannelComment] = useState([]);
+  const API_KEY = import.meta.env.VITE_API_KEY;
 
   //fetch video data
   const fetchVideo = async () => {
     const videoDetails_url = `https://www.googleapis.com/youtube/v3/videos?part=snippet,contentDetails,statistics&id=${videoID}&key=${API_KEY}
+
+  
 `;
+    if (API_KEY) {
+      console.log("API Key is defined");
+    } else {
+      console.log("API Key is NOT defined");
+    }
+
     try {
       const response = await axios(videoDetails_url);
       setApidata(response.data.items[0]);
+
       if (
         onCategoryFetch &&
         response.data.items[0]?.snippet?.categoryId //newly added
