@@ -1,10 +1,14 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "./PlayVideo.css";
 import { value_converter } from "../../data";
 import axios from "axios";
 import moment from "moment";
 import { slice } from "lodash";
 import { useParams } from "react-router-dom";
+import like from "../../assets/like.png";
+import dislike from "../../assets/dislike.png";
+import share from "../../assets/share.png";
+import save from "../../assets/save.png";
 
 const PlayVideo = ({ onCategoryFetch }) => {
   const { videoID } = useParams();

@@ -1,4 +1,3 @@
-import React from "react";
 import "./Sidebar.css";
 import { Link } from "react-router-dom";
 import home from "../../assets/home.png";
@@ -16,7 +15,6 @@ import tech from "../../assets/tech.png";
 import blogs from "../../assets/blogs.png";
 import jack from "../../assets/jack.png";
 import simon from "../../assets/simon.png";
-import entertainment from "../../assets/entertainment.png";
 
 const Sidebar = ({ sidebar, category, setCategory }) => {
   return (
